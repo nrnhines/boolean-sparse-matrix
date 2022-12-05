@@ -3,7 +3,7 @@ from time import time
 
 h.register_BooleanSparseMatrix()
 
-rank = 10000
+rank = 100000
 ms = [h.BooleanSparseMatrix(rank, rank) for _ in range(2)]
 
 r = h.Random()
@@ -33,5 +33,5 @@ for m in ms:
 
 
 start = time()
-ms[0].mul(ms[1]).pr()
-print("mul time %g" % (time() - start))
+ms[0].elmmul(ms[1]).pr()
+print("elmmul time %g" % (time() - start))
